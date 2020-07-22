@@ -1,0 +1,14 @@
+<div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ post.date_pub }}</h6>
+      <p class="card-text">{{ post.body|truncatewords:15 }}</p>
+      <a href="{{ post.get_absolute_url }}" class="btn btn-light">Read</a>
+    </div>
+    <div class="card-footer text-muted mt-2">
+      tags:
+      {% for tag in post.tags.all %}
+        <a href="{{ tag.get_absolute_url }}"> {{ tag.title }}</a>
+      {% endfor %}
+    </div>
+</div>

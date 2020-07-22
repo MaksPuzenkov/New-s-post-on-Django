@@ -1,0 +1,26 @@
+body{
+    font-family: 'Libre Baskerville', serif;
+ }
+ 
+.admin-panel{
+    border: 1px solid rgb(8, 80, 139);
+    border-radius: 3px;
+    position: fixed;
+    right: 60px;
+    bottom: 40px;
+    opacity: 0.5;
+    padding: 15px;
+}
+
+.admin-panel:hover {
+    opacity: 1;
+}
+
+.admin-panel a {
+    display: block;
+    margin: 7px;
+}
+
+a.edit, a.delete {
+    display: none;
+}

@@ -1,0 +1,24 @@
+{% extends 'blog/basetemplate.html' %}
+
+{% block title %}
+    Edit Post "{{ post.title }}"- {{block.super}}
+{% endblock %}
+
+{% block content%}
+    <form action="{{ post.get_update_url }}" method='POST'>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {% if field.errors %}
+                    <div class="alert alert-danger">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+                {{field.label}}
+                {{field}}
+            </div>
+        {% endfor %}
+        <button type='submit' name='button' class='btn btn-primary'>Edit Post</button>
+    </form>
+{% endblock %}
+
